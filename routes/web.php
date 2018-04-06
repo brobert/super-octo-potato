@@ -14,16 +14,7 @@ Route::middleware([
     'auth'
 ])->group(function () {
 
-    Route::get('/', function () {
-        return view('index', [
-            'user' => Auth::user(),
-            'main_menu' => []
-        ]);
-    });
-
-    Route::get('/home', function () {
-        return view('home');
-    });
+    Route::get('/', 'IndexController@index')->name('index');
 
     Route::get('account/edit', function () {
         return view('index', [

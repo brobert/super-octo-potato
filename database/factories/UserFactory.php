@@ -20,7 +20,9 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),
-        'active_from' => $faker->dateTimeBetween($startDate = '-3 years', $endDate = '+3 years', $timezone = null),
-        'active_to' => $faker->dateTimeBetween($startDate = '+3 years', $endDate = '+4 years', $timezone = null),
+        'valid_from' => $faker->dateTimeBetween($startDate = '-3 years', $endDate = '+3 years', $timezone = null),
+        'valid_to' => $faker->dateTimeBetween($startDate = '+3 years', $endDate = '+4 years', $timezone = null),
+
+        'type' => $faker->randomElement(['developer','admin','user']),
     ];
 });

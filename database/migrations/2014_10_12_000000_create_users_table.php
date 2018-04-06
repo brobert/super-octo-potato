@@ -21,9 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('email')
                 ->unique();
             $table->string('password');
-            $table->date('valid_to')
-                ->nullable();
             $table->date('valid_from')
+                ->nullable();
+            $table->date('valid_to')
                 ->nullable();
             $table->enum('type', [
                 'developer',
