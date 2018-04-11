@@ -11,17 +11,28 @@ use Illuminate\Routing\Route;
 class IndexController extends Controller
 {
 
-    // public function __construct()
-    // {
-    // }
-    public function index(Route $route, Request $request)
+    public function index(Request $request)
     {
+        if (Auth::user()->type === 'user') {
+            return $this->index_user();
+        } elseif (Auth::user()->type === 'admin') {
+            return $this->index_admin();
+        } elseif (Auth::user()->type === 'developer') {
+            return $this->index_developer();
+        }
+    }
 
-        // dd($route);
-        // $currentAction = $route->getController();
-        // list($controller, $method) = explode('@', $currentAction);
-        // $this­>cointrollerName= preg_replace('/.*\\\/', '', $controller);
-        // $this­>actionName=preg_replace('/.*\\\/', '', $method);
-        return $this->respond('index');
+    private function index_user() {
+        return $this->respond();
+    }
+
+    private function index_admin()
+    {
+        return $this->respond();
+    }
+
+    private function index_developer()
+    {
+        return $this->respond();
     }
 }

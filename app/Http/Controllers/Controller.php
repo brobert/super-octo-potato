@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use App\Http\Traits\AppResponse;
+use Auth;
 
 
 class Controller extends BaseController
@@ -17,9 +18,12 @@ class Controller extends BaseController
 
     protected $request;
 
+    protected $user;
+
     public function __construct(Request $request)
     {
         $this->request = $request;
+        $this->user = Auth::user();
         $this->stash ['scope'] = $request->scope;
     }
 }
