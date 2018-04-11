@@ -16,12 +16,9 @@ Route::middleware([
 
     Route::get('/', 'IndexController@index')->name('index');
 
-    Route::get('account/edit', function () {
-        return view('index', [
-            'user' => Auth::user(),
-            'main_menu' => []
-        ]);
-    })->name('account.edit');
+    Route::get('account/edit', 'Auth\AccountController@edit')->name('account.edit');
+    Route::get('account', 'Auth\AccountController@show')->name('account.show');
+    Route::post('account/update/{scope}', 'Auth\AccountController@update')->name('account.update');
 });
 
 Auth::routes();

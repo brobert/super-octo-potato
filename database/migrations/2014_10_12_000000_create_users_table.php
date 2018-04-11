@@ -18,8 +18,10 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('surname');
-            $table->string('email')
+            $table->string('email', 100)
                 ->unique();
+            $table->string('phone', 50)
+                ->nullable();
             $table->string('password');
             $table->date('valid_from')
                 ->nullable();

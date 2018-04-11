@@ -23,7 +23,8 @@ class User extends Authenticatable
         'valid_from',
         'valid_to',
         'password',
-        'type'
+        'type',
+        'phone'
     ];
 
     /**
