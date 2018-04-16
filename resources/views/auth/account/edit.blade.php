@@ -14,7 +14,7 @@
                         <!-- Toolbar -->
                         <div class="toolbar">
                             <ol class="breadcrumb breadcrumb-transparent nm">
-                                <li class="active">Profile |{{$scope}}|</li>
+                                <li class="active">Profile</li>
                             </ol>
                         </div>
                         <!--/ Toolbar -->
@@ -26,17 +26,6 @@
                 <div class="row">
                     <!-- Left / Top Side -->
                     <div class="col-lg-3">
-                        <!-- tab menu -->
-                        <ul class="list-group list-group-tabs">
-                            <li class="list-group-item active">
-                                <a href="#profile" data-toggle="tab"><i class="ico-user2 mr5"></i> @lang('auth.form.profile.title')</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="#password" data-toggle="tab"><i class="ico-key2 mr5"></i> @lang('auth.form.password.title')</a></li>
-                        </ul>
-                        <!-- tab menu -->
-
-                        <hr><!-- horizontal line -->
 
                         <!-- figure with progress -->
                         <ul class="list-table">
@@ -51,7 +40,21 @@
 
                         <hr><!-- horizontal line -->
 
+                        <!-- tab menu -->
+
+                        <ul class="list-group list-group-tabs">
+                            <li class="list-group-item active">
+                                <a href="#profile" data-toggle="tab"><i class="ico-user2 mr5"></i> @lang('auth.form.profile.title')</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#password" data-toggle="tab"><i class="ico-key2 mr5"></i> @lang('auth.form.password.title')</a></li>
+                        </ul>
+                        <!-- tab menu -->
+
+                        <hr><!-- horizontal line -->
+
                         <!-- follower stats -->
+                        @if(0)
                         <ul class="nav nav-section nav-justified mt15">
                             <li>
                                 <div class="section">
@@ -66,6 +69,7 @@
                                 </div>
                             </li>
                         </ul>
+                        @endif
                         <!--/ follower stats -->
                     </div>
                     <!--/ Left / Top Side -->
