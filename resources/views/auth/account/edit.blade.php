@@ -14,7 +14,7 @@
                         <!-- Toolbar -->
                         <div class="toolbar">
                             <ol class="breadcrumb breadcrumb-transparent nm">
-                                <li class="active">Profile |{{$scope}}|</li>
+                                <li class="active">Profile |{{session('scope')}}|</li>
                             </ol>
                         </div>
                         <!--/ Toolbar -->
@@ -28,10 +28,10 @@
                     <div class="col-lg-3">
                         <!-- tab menu -->
                         <ul class="list-group list-group-tabs">
-                            <li class="list-group-item active">
+                            <li class="list-group-item {{!session('scope') || session('scope') === 'profile'? 'active': ''}}">
                                 <a href="#profile" data-toggle="tab"><i class="ico-user2 mr5"></i> @lang('auth.form.profile.title')</a>
                             </li>
-                            <li class="list-group-item">
+                            <li class="list-group-item {{session('scope') === 'password'? 'active': ''}}">
                                 <a href="#password" data-toggle="tab"><i class="ico-key2 mr5"></i> @lang('auth.form.password.title')</a></li>
                         </ul>
                         <!-- tab menu -->
@@ -75,11 +75,15 @@
                         <!-- START Tab-content -->
                         <div class="tab-content">
                             <!-- tab-pane: profile -->
+                            	<div class="tab-pane {{!session('scope') || session('scope') === 'profile'? 'active': ''}}" id="profile">
                                 @include('auth/account/partials/edit_basic')
+                                </div>
                             <!--/ tab-pane: profile -->
 
                             <!-- tab-pane: password -->
+                            	<div class="tab-pane {{session('scope') === 'password'? 'active': ''}}" id="password">
                                 @include('auth/account/partials/edit_password')
+                                </div>
                             <!--/ tab-pane: password -->
                         </div>
                         <!--/ END Tab-content -->

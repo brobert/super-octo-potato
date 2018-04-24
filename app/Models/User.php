@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function full_name()
     {
-        return $this->name . ' ' . $this->surname;
+        return sprintf("%s %s", $this->surname, $this->name);
     }
 }

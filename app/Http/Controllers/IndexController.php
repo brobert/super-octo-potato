@@ -22,6 +22,11 @@ class IndexController extends Controller
         }
     }
 
+    public function help(Request $request)
+    {
+        return $this->respond();
+    }
+
     private function index_user() {
         return $this->respond();
     }
