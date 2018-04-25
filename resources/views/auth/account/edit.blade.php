@@ -14,7 +14,7 @@
                         <!-- Toolbar -->
                         <div class="toolbar">
                             <ol class="breadcrumb breadcrumb-transparent nm">
-                                <li class="active">Profile |{{session('scope')}}|</li>
+                                <li class="active">Profile</li>
                             </ol>
                         </div>
                         <!--/ Toolbar -->
