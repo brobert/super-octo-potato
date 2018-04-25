@@ -4,6 +4,7 @@
 <!-- START row -->
 <div class="row">
     <div class="col-lg-12">
+<<<<<<< HEAD
         <!-- START panel -->
         <div class="panel panel-primary">
             <!-- panel heading/header -->
@@ -46,6 +47,12 @@
             </div>
             <!--/ panel body with collapse capabale -->
         </div>
+=======
+
+        <pre>
+        {{print_r($user->toArray(), true)}}
+        </pre>
+>>>>>>> 4003017de847784a5abb86520e10a7ac1d94ffe9
     </div>
 </div>
 <!--/ END row -->

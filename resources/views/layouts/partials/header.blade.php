@@ -36,12 +36,12 @@
 
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">First item</a></li>
-                        <li><a href="#">Second item</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Third item</a></li>
-                    </ul>
+                <ul class="dropdown-menu">
+                    <li><a href="#">First item</a></li>
+                    <li><a href="#">Second item</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Third item</a></li>
+                </ul>
             </li>
 
         </ul>
@@ -61,15 +61,15 @@
         <!-- START Right nav -->
         <ul class="nav navbar-nav navbar-right">
             <!-- Notification dropdown -->
-                @include('layouts/partials/messages_dropdown')
+            @include('layouts/partials/messages_dropdown')
             <!--/ Notification dropdown -->
 
             <!-- Profile dropdown -->
             <li class="dropdown profile">
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="meta">
-                        <span class="avatar"><img src="/image/avatar/avatar7.jpg" class="img-circle" alt="" /></span>
-                        <span class="text hidden-xs hidden-sm pl5">{{ $user->full_name()}}</span>
+                        <span class="avatar"><img src="{{config('app.avatar_url')}}" class="img-circle" alt="" /></span>
+                        <span class="text hidden-xs hidden-sm pl5">{{ $auth_user->full_name()}}</span>
                     </span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
@@ -78,8 +78,8 @@
                     <li class="divider"></li>
                     <li>
                         <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                        >
                             Logout
                         </a>
 
@@ -104,7 +104,7 @@
             @endif
 
         </ul>
-        <!--/ END Right nav -->
+    <!--/ END Right nav -->
     </div>
     <!--/ END Toolbar -->
 </header>

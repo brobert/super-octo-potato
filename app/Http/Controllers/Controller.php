@@ -18,13 +18,15 @@ class Controller extends BaseController
 
     protected $request;
 
-    protected $user;
+    protected $auth_user;
 
     public function __construct(Request $request)
 	{
         $this->request = $request;
-        $this->user = Auth::user();
+
+        $this->stash['auth_user'] = Auth::user();
         $this->stash['scope'] = $request->scope;
 		$this->stash['query'] = $request->query();
-	}
+    }
+
 }

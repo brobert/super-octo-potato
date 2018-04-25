@@ -28,7 +28,7 @@ trait AppResponse {
             $this->stash ['main_menu'] = config('menu');
 
             if (Auth::check()) {
-                $this->stash ['user'] = Auth::user();
+                $this->stash ['auth_user'] = Auth::user();
                 // $this->load_messages(new MessageResource());
             }
 

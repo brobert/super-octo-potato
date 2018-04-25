@@ -1,0 +1,79 @@
+/* ----------------------------
+ *
+ * Template Main
+ *
+ * --------------------------- */
+/* Push right */
+.csstransforms3d.sidebar-open-ltr #main {
+  -webkit-transform: translate3d(240px, 0, 0);
+          transform: translate3d(240px, 0, 0);
+}
+.no-csstransforms3d.sidebar-open-ltr #main {
+  left: 240px;
+  right: auto;
+}
+/* Push left */
+.csstransforms3d.sidebar-open-rtl #main {
+  -webkit-transform: translate3d(-240px, 0, 0);
+          transform: translate3d(-240px, 0, 0);
+}
+.no-csstransforms3d.sidebar-open-rtl #main {
+  right: 240px;
+  left: auto;
+}
+#main {
+  position: relative;
+  -webkit-transition: -webkit-transform 0.2s ease;
+       -o-transition: -o-transform 0.2s ease;
+          transition: transform 0.2s ease;
+}
+#main:before,
+#main:after {
+  content: " ";
+  display: table;
+}
+#main:after {
+  clear: both;
+}
+#main > .container-fluid,
+#main > .container {
+  float: left;
+  width: 100%;
+  padding: 15px;
+  padding-bottom: 0;
+}
+footer#footer ~ #main {
+  padding-bottom: 48px;
+}
+/* ----------------------------
+ *
+ * Template Sidebar - screen-sm and up
+ *
+ * --------------------------- */
+@media (min-width: 768px) {
+  /* Push right */
+  .csstransforms3d.sidebar-open-ltr #main {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .no-csstransforms3d.sidebar-open-ltr #main {
+    left: 0px;
+    right: auto;
+  }
+  /* Push left */
+  .csstransforms3d.sidebar-open-rtl #main {
+    -webkit-transform: translate3d(-240px, 0, 0);
+            transform: translate3d(-240px, 0, 0);
+  }
+  .no-csstransforms3d.sidebar-open-rtl #main {
+    right: 240px;
+    left: auto;
+  }
+  .sidebar-left.sidebar-menu ~ #main {
+    margin-left: 240px;
+  }
+  .sidebar-minimized .sidebar-left.sidebar-menu ~ #main,
+  .screen-sm .sidebar-left.sidebar-menu ~ #main {
+    margin-left: 60px;
+  }
+}

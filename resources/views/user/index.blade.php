@@ -6,19 +6,12 @@
     <div class="col-lg-12">
         <!-- START panel -->
         <div class="panel panel-primary">
+
+            @if(count($users))
             <!-- panel heading/header -->
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-table22"></i></span> Table Showcase</h3>
-                <!-- panel toolbar -->
-                <div class="panel-toolbar text-right">
-                    <!-- option -->
-                    <div class="option">
-                        <button class="btn up" data-toggle="panelcollapse"><i class="arrow"></i></button>
-                        <button class="btn" data-toggle="panelremove" data-parent=".col-md-12"><i class="remove"></i></button>
-                    </div>
-                    <!--/ option -->
-                </div>
-                <!--/ panel toolbar -->
+
             </div>
             <!--/ panel heading/header -->
             <!-- panel toolbar wrapper -->
@@ -30,11 +23,6 @@
                     </div>
                 </div>
                 <div class="panel-toolbar text-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-default"><i class="ico-upload22"></i></button>
-                        <button type="button" class="btn btn-sm btn-default"><i class="ico-archive2"></i></button>
-                    </div>
-
                     <button type="button" class="btn btn-sm btn-danger"><i class="ico-remove3"></i></button>
                 </div>
             </div>
@@ -42,21 +30,25 @@
 
             <!-- panel body with collapse capabale -->
             <div class="table-responsive panel-collapse pull out">
-            	<table class="table table-bordered table-hover" id="table1">
-            		<thead>
+                <table class="table table-bordered table-hover" id="table1">
+                    <thead>
                         <tr>
                             <th width="3%" class="text-center"><i class="ico-long-arrow-down"></i></th>
-                            <th><a href="{{route('users', ['sort' => 'name', 'dir' => 'asc' ])}}">Name</a></th>
-                            <th>Email</th>
-                            <th>Created</th>
-							<th></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'name')) }}">Name</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'email')) }}">Email</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'created')) }}">Created</a></th>
+                            <th></th>
                         </tr>
-            		</thead>
-            		<tbody>
-            			@each('user.table_row', $users, 'user', 'user.table_empty')
-            		</tbody>
-            	</table>
+                    </thead>
+                    <tbody>
+                        @each('user.table_row', $users, 'user')
+                    </tbody>
+                </table>
+                {{ $users->appends($query)->links() }}
             </div>
+        @else
+            @include('user.table_empty')
+        @endif
             <!--/ panel body with collapse capabale -->
         </div>
     </div>
