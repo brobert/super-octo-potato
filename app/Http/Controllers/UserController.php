@@ -27,11 +27,18 @@ class UserController extends Controller
 
     public function edit(Request $request, $id)
     {
-        return $this->respond();
+        $this->stash ['user'] = $this->resource->get_user($request, $id);
+        return $this->respond('auth.account.edit');
     }
 
     public function update(Request $request, $id)
     {
         return $this->respond();
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        $this->resource->delete_user($request, $id);
+        return back();
     }
 }

@@ -30,11 +30,6 @@
                     </div>
                 </div>
                 <div class="panel-toolbar text-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-default"><i class="ico-upload22"></i></button>
-                        <button type="button" class="btn btn-sm btn-default"><i class="ico-archive2"></i></button>
-                    </div>
-
                     <button type="button" class="btn btn-sm btn-danger"><i class="ico-remove3"></i></button>
                 </div>
             </div>
@@ -46,9 +41,9 @@
                     <thead>
                         <tr>
                             <th width="3%" class="text-center"><i class="ico-long-arrow-down"></i></th>
-                            <th><a href="{{route('users', array_merge( $query, ['sort' => 'name', 'dir' => (!array_has($query, 'dir') || $query['dir'] === 'desc')? 'asc':'desc' ]))}}">Name</a></th>
-                            <th><a href="{{route('users', array_merge( $query, ['sort' => 'email', 'dir' => (!array_has($query, 'dir') || $query['dir'] === 'desc')? 'asc':'desc' ]))}}">Email</a></th>
-                            <th><a href="{{route('users', array_merge( $query, ['sort' => 'created', 'dir' => (!array_has($query, 'dir') || $query['dir'] === 'desc')? 'asc':'desc' ]))}}">Created</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'name')) }}">Name</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'email')) }}">Email</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'created')) }}">Created</a></th>
                             <th></th>
                         </tr>
                     </thead>

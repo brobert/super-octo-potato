@@ -50,16 +50,26 @@ class UserResource extends BasicResource
         }
 
         $sortColumns = $this->model->getSort($request->sort);
-        $sortDir = $request->sort ?? 'asc';
+        $sortDir = $request->dir ?? 'asc';
         foreach ( $sortColumns as $sortColumn ) {
-            $query = $query->orderBy($sortColumn, $request->dir);
+            $query = $query->orderBy($sortColumn, $sortDir);
         }
 
-        Log::debug('------------ SORT: ' . $request->sort ?: 'undefined');
-        $methods = get_class_methods($query);
-        sort($methods, SORT_LOCALE_STRING);
-        Log::debug(print_r($methods, TRUE));
-
         return $query->paginate();
+    }
+
+    public function get_user(Request $request, $id)
+    {
+        return $this->model->findOrFail($id);
+    }
+
+    public function delete_user(Request $request, $id)
+    {
+        $user = $this->model->findOrFail($id);
+        Log::debug('---------------------- delete_user');
+        Log::debug(print_r($user->toArray(), 1));
+        $res = $user->delete();
+        Log::debug(print_r($res, 1));
+        return $res;
     }
 }

@@ -5,12 +5,14 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Traits\Sortable;
+use Illuminate\Database\Eloquent\Model;
 
 
 class User extends Authenticatable
 {
-    use Notifiable, Sortable;
+    use Notifiable, SoftDeletes, Sortable;
 
     /**
      * The attributes that are mass assignable.
@@ -38,8 +40,16 @@ class User extends Authenticatable
         'remember_token'
     ];
 
+    protected $dates = [
+        'deleted_at',
+        'created_at',
+        'updated_at'
+    ];
+
     public function __construct()
     {
+        parent::__construct();
+
         $this->sortMap = array(
             'name' => [
                 'surname',

@@ -32,6 +32,7 @@ class AccountController extends Controller
      */
     public function edit()
     {
+        $this->stash ['user'] = Auth::user();
         return $this->respond();
     }
 
