@@ -45,4 +45,12 @@ class UpdateAuthUser extends FormRequest
             ];
         }
     }
+
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            $this->session()->flash('scope', $this->scope);
+            Log::debug(" withValidator :: after::scope: " . $this->scope);
+        });
+    }
 }

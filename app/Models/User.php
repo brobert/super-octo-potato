@@ -5,11 +5,12 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Traits\Sortable;
 
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Sortable;
 
     /**
      * The attributes that are mass assignable.
@@ -37,8 +38,26 @@ class User extends Authenticatable
         'remember_token'
     ];
 
+    public function __construct()
+    {
+        $this->sortMap = array(
+            'name' => [
+                'surname',
+                'name'
+            ],
+            'email' => [
+                'email'
+            ],
+            'create' => [
+                'created_at'
+            ]
+        );
+
+        $this->sortDefault = 'name';
+    }
+
     public function full_name()
     {
-        return $this->name . ' ' . $this->surname;
+        return sprintf('%s %s', $this->surname, $this->name);
     }
 }

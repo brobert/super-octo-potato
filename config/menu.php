@@ -6,8 +6,12 @@ return [
         'icon' => 'ico-home'
     ],
     [
-        'name' => 'npk.payments',
-        'icon' => 'ico-money'
+        'name' => 'help',
+        'icon' => 'ico-question'
+    ],
+    [
+        'name' => 'users',
+        'icon' => 'ico-users'
     ],
     [
         'name' => 'landerv2',

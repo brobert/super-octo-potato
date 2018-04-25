@@ -24,7 +24,7 @@ $factory->define(App\Models\User::class, function (Faker $faker) {
         'valid_to' => $faker->dateTimeBetween($startDate = '+3 years', $endDate = '+4 years', $timezone = null),
 
         'type' => $faker->randomElement([
-            'developer',
+//             'developer',
             'admin',
             'user'
         ])

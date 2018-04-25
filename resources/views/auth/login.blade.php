@@ -83,7 +83,9 @@ Lander.v2 - Login Page
                             </div>
                         </div>
                         <div class="form-group nm">
-                            <button type="submit" class="btn btn-block btn-success"><span class="semibold">@lang('auth.login.login_button')</span></button>
+                            <button type="submit" class="btn btn-block btn-success">
+                            	<span class="semibold">@lang('auth.login.login_button')</span>
+                        	</button>
                         </div>
                     </div>
                 </form>
@@ -91,7 +93,9 @@ Lander.v2 - Login Page
 
                 <hr><!-- horizontal line -->
 
-                <p class="text-muted text-center">@lang('auth.login.no_account') <a class="semibold" href="/register">@lang('auth.login.go_to_register')</a></p>
+                <p class="text-muted text-center">@lang('auth.login.no_account')
+                	<a class="semibold" href="/register">@lang('auth.login.go_to_register')</a>
+            	</p>
             </div>
         </div>
         <!--/ END row -->
