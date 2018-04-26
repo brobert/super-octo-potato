@@ -40,7 +40,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @each('user.table_row', $users, 'user')
+                    	@foreach($users as $user)
+                    		@include('user.table_row')
+                    	@endforeach
                     </tbody>
                 </table>
                 {{ $users->appends($query)->links() }}

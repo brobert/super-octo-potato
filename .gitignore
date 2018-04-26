@@ -14,3 +14,4 @@ yarn-error.log
 org.eclipse.core.resources.prefs
 org.eclipse.wst.validation.prefs
 /.buildpath
+/.settings/

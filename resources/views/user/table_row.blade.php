@@ -5,7 +5,12 @@
             <label for="user-{{$user->id}}"></label>
         </div>
     </td>
-    <td> {{$user->full_name()}} <a href="{{route('user.edit', ['id' => $user->id])}}"><i class="icon ico-pencil"></i></a> </td>
+    <td>
+    	{{$user->full_name()}} <a href="{{route('user.edit', ['id' => $user->id])}}"><i class="icon ico-pencil"></i></a>
+    	@if( in_array($auth_user->type, ['admin','developer'] ))
+		<span class="label label-info">{{$user->type}}</span>
+		@endif
+	</td>
     <td> {{$user->email}} </td>
     <td> {{$user->created_at->toDateString()}} </td>
     <td class="text-center">

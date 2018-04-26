@@ -46,9 +46,9 @@ class User extends Authenticatable
         'updated_at'
     ];
 
-    public function __construct()
+    public function __construct($data = [])
     {
-        parent::__construct();
+        parent::__construct($data);
 
         $this->sortMap = array(
             'name' => [

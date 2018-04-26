@@ -7,7 +7,7 @@ return [
     ],
     [
         'name' => 'users',
-        'icon' => 'ico-money'
+        'icon' => 'ico-users2'
     ],
     [
         'name' => 'help',
