@@ -36,12 +36,12 @@
 
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">First item</a></li>
-                        <li><a href="#">Second item</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Third item</a></li>
-                    </ul>
+                <ul class="dropdown-menu">
+                    <li><a href="#">First item</a></li>
+                    <li><a href="#">Second item</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Third item</a></li>
+                </ul>
             </li>
 
         </ul>
@@ -61,7 +61,7 @@
         <!-- START Right nav -->
         <ul class="nav navbar-nav navbar-right">
             <!-- Notification dropdown -->
-                @include('layouts/partials/messages_dropdown')
+            @include('layouts/partials/messages_dropdown')
             <!--/ Notification dropdown -->
 
             <!-- Profile dropdown -->
@@ -104,7 +104,7 @@
             @endif
 
         </ul>
-        <!--/ END Right nav -->
+    <!--/ END Right nav -->
     </div>
     <!--/ END Toolbar -->
 </header>

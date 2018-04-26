@@ -2,13 +2,11 @@
 
 namespace App\Http\Resources;
 
-
 use Auth;
 use App\Http\Resources\BasicResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Log;
-
 
 class UserResource extends BasicResource
 {
@@ -19,8 +17,7 @@ class UserResource extends BasicResource
      * @param App\Models\Theme $theme
      * @return void
      */
-    public function __construct(User $model)
-    {
+    public function __construct(User $model) {
         $this->model = $model;
     }
 
@@ -71,4 +68,5 @@ class UserResource extends BasicResource
         $res = $user->delete();
         return $res;
     }
+
 }

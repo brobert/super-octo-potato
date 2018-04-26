@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
@@ -16,13 +15,13 @@ class UserController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
-
         $this->resource = new UserResource(new User());
     }
 
     public function index(Request $request)
     {
         $this->stash ['users'] = $this->resource->get_users_list($request);
+
         return $this->respond();
     }
 

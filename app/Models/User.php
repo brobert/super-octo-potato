@@ -68,6 +68,6 @@ class User extends Authenticatable
 
     public function full_name()
     {
-        return sprintf('%s %s', $this->surname, $this->name);
+        return sprintf("%s %s", $this->surname, $this->name);
     }
 }

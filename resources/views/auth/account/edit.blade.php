@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+
 <!-- START Template Main -->
 <section id="main" role="main">
     <!-- START Template Container -->
@@ -22,6 +23,7 @@
         </div>
         <!-- Page Header -->
 
+
         <!-- START row -->
         <div class="row">
             <!-- Left / Top Side -->
@@ -35,6 +37,7 @@
                         <a href="#password" data-toggle="tab"><i class="ico-key2 mr5"></i> @lang('auth.form.password.title')</a></li>
                 </ul>
                 <!-- tab menu -->
+
 
                 <hr><!-- horizontal line -->
 
@@ -69,7 +72,6 @@
                 <!--/ follower stats -->
             </div>
             <!--/ Left / Top Side -->
-
             <!-- Left / Bottom Side -->
             <div class="col-lg-9">
                 <!-- START Tab-content -->

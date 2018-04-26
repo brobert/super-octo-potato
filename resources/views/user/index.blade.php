@@ -10,6 +10,7 @@
             <!-- panel heading/header -->
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-table22"></i></span> Table Showcase</h3>
+
             </div>
             <!--/ panel heading/header -->
             <!-- panel toolbar wrapper -->
@@ -28,7 +29,6 @@
 
             <!-- panel body with collapse capabale -->
             <div class="table-responsive panel-collapse pull out">
-
                 <table class="table table-bordered table-hover" id="table1">
                     <thead>
                         <tr>
@@ -65,5 +65,5 @@
         <script type="text/javascript" src="/plugins/flot/js/jquery.flot.tooltip.js"></script>
         <script type="text/javascript" src="/plugins/flot/js/jquery.flot.spline.js"></script>
         <script type="text/javascript" src="/javascript/backend/pages/dashboard-v1.js"></script>
-        <script type="text/javascript" src="/javascript/backend/components/widget.js"></script>
+		<script type="text/javascript" src="/javascript/backend/components/widget.js"></script>
 @endpush
