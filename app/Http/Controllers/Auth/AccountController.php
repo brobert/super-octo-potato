@@ -33,6 +33,7 @@ class AccountController extends Controller
     public function edit()
     {
         $this->stash ['user'] = Auth::user();
+        $this->stash ['routeName'] = 'account.update';
         return $this->respond();
     }
 

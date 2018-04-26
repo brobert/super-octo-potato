@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <!-- START panel -->
         <div class="panel panel-primary">
-            @if(count($users))
+        @if(count($users))
             <!-- panel heading/header -->
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-table22"></i></span> Table Showcase</h3>

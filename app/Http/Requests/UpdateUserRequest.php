@@ -4,11 +4,11 @@ namespace App\Http\Requests;
 
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 use Auth;
+use Log;
 
 
-class UpdateAuthUser extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
 
     /**
@@ -18,6 +18,8 @@ class UpdateAuthUser extends FormRequest
      */
     public function authorize()
     {
+        Log::debug(print_r($this->user()
+            ->toArray(), TRUE));
         return true;
     }
 
@@ -30,7 +32,7 @@ class UpdateAuthUser extends FormRequest
     {
         if ($this->scope === 'profile') {
             return [
-                'email' => sprintf('required|email|unique:users,email,%s,id', Auth::user()->id),
+                'email' => sprintf('required|email|unique:users,email,%s,id', $this->id),
                 'name' => 'required|alpha_dash',
                 'surname' => 'required|alpha',
                 'phone' => 'nullable|regex:/^\+?[\d]+[\d\-\ ]+\d+$/'

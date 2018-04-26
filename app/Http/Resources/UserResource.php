@@ -49,6 +49,8 @@ class UserResource extends BasicResource
             $query = $query->where('id', '=', Auth::user()->id);
         }
 
+        $query = $query->whereIn('type', $types);
+
         $sortColumns = $this->model->getSort($request->sort);
         $sortDir = $request->dir ?? 'asc';
         foreach ( $sortColumns as $sortColumn ) {
@@ -66,10 +68,7 @@ class UserResource extends BasicResource
     public function delete_user(Request $request, $id)
     {
         $user = $this->model->findOrFail($id);
-        Log::debug('---------------------- delete_user');
-        Log::debug(print_r($user->toArray(), 1));
         $res = $user->delete();
-        Log::debug(print_r($res, 1));
         return $res;
     }
 }

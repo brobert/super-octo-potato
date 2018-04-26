@@ -6,12 +6,12 @@ return [
         'icon' => 'ico-home'
     ],
     [
-        'name' => 'help',
-        'icon' => 'ico-question'
+        'name' => 'users',
+        'icon' => 'ico-money'
     ],
     [
-        'name' => 'users',
-        'icon' => 'ico-users'
+        'name' => 'help',
+        'icon' => 'ico-question'
     ],
     [
         'name' => 'landerv2',

@@ -1,6 +1,6 @@
 
 <!-- form profile -->
-<form class="panel form-horizontal form-bordered" name="form-profile" method="POST" action="{{route('account.update', ['scope' => 'profile'])}}">
+<form class="panel form-horizontal form-bordered" name="form-profile" method="POST" action="{{route($routeName, ['scope' => 'profile', 'id' => $user->id])}}">
     @csrf
     <div class="panel-body pt0 pb0">
 

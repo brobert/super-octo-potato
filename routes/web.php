@@ -21,9 +21,9 @@ Route::middleware([
 
     // acocunts
     Route::get('/users', 'UserController@index')->name('users');
-    Route::get('/users/{id}/edit', 'UserController@edit')->name('user.edit');
-    Route::post('/users/{id}', 'UserController@update')->name('user.update');
-    Route::delete('/users/{id}', 'UserController@destroy')->name('user.delete');
+    Route::get('/user/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('/user/{id}/{scope}', 'UserController@update')->name('user.update');
+    Route::delete('/user/{id}', 'UserController@destroy')->name('user.delete');
 
     // auth account
     Route::get('account/edit', 'Auth\AccountController@edit')->name('account.edit');

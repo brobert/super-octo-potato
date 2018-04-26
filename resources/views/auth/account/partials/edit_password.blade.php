@@ -1,6 +1,6 @@
 
 <!-- form password -->
-<form class="panel form-horizontal form-bordered" name="form-profile" method="POST" action="{{route('account.update', ['scope' => 'password'])}}">
+<form class="panel form-horizontal form-bordered" name="form-profile" method="POST" action="{{route($routeName, ['scope' => 'password', 'id' => $user->id])}}">
     @csrf
     <div class="panel-body pt0 pb0">
         <div class="form-group header bgcolor-default">
