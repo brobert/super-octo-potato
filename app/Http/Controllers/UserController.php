@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
@@ -34,9 +35,11 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, $id, $scope)
     {
-        $validated = $request->validated();
+        $user = User::find($id);
 
-        Log::debug('-----------------------------------------------UserController::update' . print_r(array_keys($request->rules()), TRUE));
+        $this->authorize('update', $user);
+
+        $validated = $request->validated();
 
         $data = $request->only(array_keys($request->rules()));
 
@@ -46,7 +49,6 @@ class UserController extends Controller
             ];
         }
 
-        $user = User::find($id);
         $user->fill($data);
         $user->save();
 

@@ -9,7 +9,7 @@
         @if(count($users))
             <!-- panel heading/header -->
             <div class="panel-heading">
-                <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-table22"></i></span> Table Showcase</h3>
+                <h3 class="panel-title"><span class="panel-icon mr5"><i class="ico-table22"></i></span> @lang('menu.users')</h3>
 
             </div>
             <!--/ panel heading/header -->
@@ -18,7 +18,7 @@
                 <div class="panel-toolbar pl10">
                     <div class="checkbox custom-checkbox pull-left">
                         <input type="checkbox" id="customcheckbox-one0" value="1" data-toggle="checkall" data-target="#table1">
-                        <label for="customcheckbox-one0">&nbsp;&nbsp;Select all</label>
+                        <label for="customcheckbox-one0">&nbsp;&nbsp;@lang('common.table.actions.select_all')</label>
                     </div>
                 </div>
                 <div class="panel-toolbar text-right">
@@ -33,9 +33,9 @@
                     <thead>
                         <tr>
                             <th width="3%" class="text-center"><i class="ico-long-arrow-down"></i></th>
-                            <th><a href="{{ route( 'users', get_sort_query( $query, 'name')) }}">Name</a></th>
-                            <th><a href="{{ route( 'users', get_sort_query( $query, 'email')) }}">Email</a></th>
-                            <th><a href="{{ route( 'users', get_sort_query( $query, 'created')) }}">Created</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'name')) }}">@lang('common.table.header.full_name')</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'email')) }}">@lang('common.table.header.email')</a></th>
+                            <th><a href="{{ route( 'users', get_sort_query( $query, 'created')) }}">@lang('common.table.header.created_at')</a></th>
                             <th></th>
                         </tr>
                     </thead>

@@ -7,7 +7,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Traits\Sortable;
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
+use Log;
 
 
 class User extends Authenticatable
@@ -46,6 +47,11 @@ class User extends Authenticatable
         'updated_at'
     ];
 
+    private $admin_types = [
+        'developer',
+        'admin'
+    ];
+
     public function __construct($data = [])
     {
         parent::__construct($data);
@@ -69,5 +75,10 @@ class User extends Authenticatable
     public function full_name()
     {
         return sprintf("%s %s", $this->surname, $this->name);
+    }
+
+    public function is_admin()
+    {
+        return array_search($this->type, $this->admin_types) !== false;
     }
 }

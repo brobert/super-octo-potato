@@ -22,12 +22,12 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="{{route('user.edit', ['id' => $user->id])}}"><i class="icon ico-pencil"></i>Update</a></li>
+                    <li><a href="{{route('user.edit', ['id' => $user->id])}}"><i class="icon ico-pencil"></i>@lang('common.table.actions.edit')</a></li>
                     <li class="divider"></li>
                     <li>
                         <a href="{{route('user.delete', ['id' => $user->id])}}" class="text-danger"
                             onclick="event.preventDefault();document.getElementById('delete-form-{{$user->id}}').submit();">
-                            <i class="icon ico-remove3"></i>Delete
+                            <i class="icon ico-remove3"></i>@lang('common.table.actions.delete')
                         </a>
 
                         <form id="delete-form-{{$user->id}}" action="{{route('user.delete', ['id' => $user->id])}}" method="POST" style="display: none;">

@@ -54,7 +54,9 @@
 
                             <!-- Button -->
                             <div class="panel-body text-center">
-                                <a href="/" class="btn btn-default mb5">Back To Dashboard</a>
+                                <a href="/" class="btn btn-default mb5">@lang('common.go_home')</a>
+                                <span class="semibold text-default hidden-xs">&nbsp;&nbsp;@lang('common.or')&nbsp;&nbsp;</span>
+                                <a href="{{ URL::previous() }}" class="btn btn-default mb5">@lang('common.go_previous')</a>
                             </div>
                             <!--/ Button -->
                         </div>

@@ -10,21 +10,21 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">@lang('auth.form.profile.field.old_password')</label>
+            <label class="col-sm-3 control-label">@lang('auth.form.password.field.old_password')</label>
             <div class="col-sm-6">
                 <input type="password" class="form-control" name="old_password">
             </div>
             @includeWhen($errors->has('old_password'), 'layouts/partials/form_errors', ['err_name' => 'old_password'])
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">@lang('auth.form.profile.field.password')</label>
+            <label class="col-sm-3 control-label">@lang('auth.form.password.field.password')</label>
             <div class="col-sm-6">
                 <input type="password" class="form-control" name="password">
             </div>
             @includeWhen($errors->has('password'), 'layouts/partials/form_errors', ['err_name' => 'password'])
         </div>
         <div class="form-group">
-            <label class="col-sm-3 control-label">@lang('auth.form.profile.field.password_confirm')</label>
+            <label class="col-sm-3 control-label">@lang('auth.form.password.field.password_confirm')</label>
             <div class="col-sm-6">
                 <input type="password" class="form-control" name="password_confirmation">
             </div>
