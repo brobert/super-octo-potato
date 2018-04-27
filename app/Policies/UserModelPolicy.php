@@ -21,7 +21,8 @@ class UserModelPolicy
      */
     public function view(User $authUser, User $user)
     {
-        //
+        // user can see himself or if is an admin user
+        return $authUser->id === $user->id || $authUser->is_admin();
     }
 
     /**
@@ -32,7 +33,8 @@ class UserModelPolicy
      */
     public function create(User $authUser)
     {
-        //
+        // Only admin can create new account
+        return $authUser->is_admin();
     }
 
     /**
@@ -44,11 +46,8 @@ class UserModelPolicy
      */
     public function update(User $authUser, User $user)
     {
-        if ($authUser->id === $user->id || $authUser->is_admin()) {
-            // user can update himself
-            return true;
-        }
-        return false;
+        // user can update himself or if is an admin user
+        return $authUser->id === $user->id || $authUser->is_admin();
     }
 
     /**
@@ -60,5 +59,7 @@ class UserModelPolicy
      */
     public function delete(User $authUser, User $user)
     {
+        // Only admin can create new account
+        return $authUser->is_admin();
     }
 }
