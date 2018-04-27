@@ -38,6 +38,7 @@ class UserController extends Controller
         // find user
         $user = User::find($id);
 
+        // authorize and validate request
         $this->authorize('update', $user);
         $validated = $request->validated();
 
