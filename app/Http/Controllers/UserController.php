@@ -35,12 +35,17 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, $id, $scope)
     {
+        // find user
         $user = User::find($id);
 
-        $this->authorize('update', $user);
+        Log::debug(print_r(get_object_vars($user), 1));
+        Log::debug(print_r(get_class_methods($user), 1));
 
+        // authorize and validate request
+        $this->authorize('update', $user);
         $validated = $request->validated();
 
+        // get data from request
         $data = $request->only(array_keys($request->rules()));
 
         if ($scope === 'password') {
